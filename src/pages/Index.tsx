@@ -8,8 +8,11 @@ import {
   MapPin
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const Index = () => {
+  const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -78,29 +81,35 @@ const Index = () => {
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Connect With Me</h3>
             
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 gap-6">
               {/* LinkedIn */}
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-indigo-50"
+                className="group relative flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                onMouseEnter={() => setHoveredIcon('linkedin')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className="bg-[#0A66C2] p-4 rounded-full mb-2">
-                  <Linkedin className="h-8 w-8 text-white" />
+                <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'scale-110 bg-[#0A66C2]' : 'bg-blue-100'}`}>
+                  <Linkedin className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'text-white' : 'text-[#0A66C2]'}`} />
                 </div>
-                <span className="text-gray-800 font-medium">LinkedIn</span>
+                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'text-white' : 'text-gray-800'}`}>LinkedIn</span>
+                <div className="absolute inset-0 bg-[#0A66C2] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
               {/* Gmail */}
               <a 
                 href="mailto:john.doe@example.com" 
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-indigo-50"
+                className="group relative flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                onMouseEnter={() => setHoveredIcon('gmail')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className="bg-[#EA4335] p-4 rounded-full mb-2">
-                  <Mail className="h-8 w-8 text-white" />
+                <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'gmail' ? 'scale-110 bg-[#EA4335]' : 'bg-red-100'}`}>
+                  <Mail className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'gmail' ? 'text-white' : 'text-[#EA4335]'}`} />
                 </div>
-                <span className="text-gray-800 font-medium">Gmail</span>
+                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'gmail' ? 'text-white' : 'text-gray-800'}`}>Gmail</span>
+                <div className="absolute inset-0 bg-[#EA4335] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
               {/* Instagram */}
@@ -108,12 +117,15 @@ const Index = () => {
                 href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-indigo-50"
+                className="group relative flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                onMouseEnter={() => setHoveredIcon('instagram')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className="bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] p-4 rounded-full mb-2">
-                  <Instagram className="h-8 w-8 text-white" />
+                <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'instagram' ? 'scale-110 bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]' : 'bg-pink-100'}`}>
+                  <Instagram className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'instagram' ? 'text-white' : 'text-[#DD2A7B]'}`} />
                 </div>
-                <span className="text-gray-800 font-medium">Instagram</span>
+                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'instagram' ? 'text-white' : 'text-gray-800'}`}>Instagram</span>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
               {/* Twitter */}
@@ -121,34 +133,16 @@ const Index = () => {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:bg-indigo-50"
+                className="group relative flex flex-col items-center justify-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                onMouseEnter={() => setHoveredIcon('twitter')}
+                onMouseLeave={() => setHoveredIcon(null)}
               >
-                <div className="bg-[#1DA1F2] p-4 rounded-full mb-2">
-                  <Twitter className="h-8 w-8 text-white" />
+                <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'twitter' ? 'scale-110 bg-[#1DA1F2]' : 'bg-blue-100'}`}>
+                  <Twitter className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'twitter' ? 'text-white' : 'text-[#1DA1F2]'}`} />
                 </div>
-                <span className="text-gray-800 font-medium">Twitter</span>
+                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'twitter' ? 'text-white' : 'text-gray-800'}`}>Twitter</span>
+                <div className="absolute inset-0 bg-[#1DA1F2] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
-              
-              {/* Placeholder boxes to complete the 3x3 grid */}
-              <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm opacity-0">
-                <span>Placeholder</span>
-              </div>
-              
-              <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm opacity-0">
-                <span>Placeholder</span>
-              </div>
-              
-              <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm opacity-0">
-                <span>Placeholder</span>
-              </div>
-              
-              <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm opacity-0">
-                <span>Placeholder</span>
-              </div>
-              
-              <div className="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm opacity-0">
-                <span>Placeholder</span>
-              </div>
             </div>
           </div>
         </div>
