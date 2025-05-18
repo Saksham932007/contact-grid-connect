@@ -94,7 +94,7 @@ const Index = () => {
                 <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'scale-110 bg-[#0A66C2]' : 'bg-blue-100'}`}>
                   <Linkedin className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'text-white' : 'text-[#0A66C2]'}`} />
                 </div>
-                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'linkedin' ? 'text-white' : 'text-gray-800'}`}>LinkedIn</span>
+                <span className={`font-medium transition-all duration-500 z-20 ${hoveredIcon === 'linkedin' ? 'text-white font-bold' : 'text-gray-800'}`}>LinkedIn</span>
                 <div className="absolute inset-0 bg-[#0A66C2] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
@@ -108,7 +108,7 @@ const Index = () => {
                 <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'gmail' ? 'scale-110 bg-[#EA4335]' : 'bg-red-100'}`}>
                   <Mail className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'gmail' ? 'text-white' : 'text-[#EA4335]'}`} />
                 </div>
-                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'gmail' ? 'text-white' : 'text-gray-800'}`}>Gmail</span>
+                <span className={`font-medium transition-all duration-500 z-20 ${hoveredIcon === 'gmail' ? 'text-white font-bold' : 'text-gray-800'}`}>Gmail</span>
                 <div className="absolute inset-0 bg-[#EA4335] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
@@ -124,7 +124,7 @@ const Index = () => {
                 <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'instagram' ? 'scale-110 bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]' : 'bg-pink-100'}`}>
                   <Instagram className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'instagram' ? 'text-white' : 'text-[#DD2A7B]'}`} />
                 </div>
-                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'instagram' ? 'text-white' : 'text-gray-800'}`}>Instagram</span>
+                <span className={`font-medium transition-all duration-500 z-20 ${hoveredIcon === 'instagram' ? 'text-white font-bold' : 'text-gray-800'}`}>Instagram</span>
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
               
@@ -140,7 +140,7 @@ const Index = () => {
                 <div className={`relative z-10 flex items-center justify-center w-16 h-16 rounded-full mb-3 transform transition-all duration-500 ${hoveredIcon === 'twitter' ? 'scale-110 bg-[#1DA1F2]' : 'bg-blue-100'}`}>
                   <Twitter className={`h-8 w-8 transition-all duration-500 ${hoveredIcon === 'twitter' ? 'text-white' : 'text-[#1DA1F2]'}`} />
                 </div>
-                <span className={`font-medium transition-all duration-500 ${hoveredIcon === 'twitter' ? 'text-white' : 'text-gray-800'}`}>Twitter</span>
+                <span className={`font-medium transition-all duration-500 z-20 ${hoveredIcon === 'twitter' ? 'text-white font-bold' : 'text-gray-800'}`}>Twitter</span>
                 <div className="absolute inset-0 bg-[#1DA1F2] transform translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-0"></div>
               </a>
             </div>
@@ -152,3 +152,4 @@ const Index = () => {
 };
 
 export default Index;
+
